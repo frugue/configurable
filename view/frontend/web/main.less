@@ -13,11 +13,13 @@ body.page-product-configurable {
 			background: red;
 			border-top: 1px solid red;
 			content: "";
-			left: -0.5em;
 			position: absolute;
-			right: -0.5em;
 			top: 50%;
 			transform:rotate(45deg);
+			// 2018-06-04
+			// It will allow the red line reach the swatch's corners.
+			// https://stackoverflow.com/a/40499367
+			left: -0.5em; right: -0.5em;
 		}
 	}
 }

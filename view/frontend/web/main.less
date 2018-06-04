@@ -1,0 +1,23 @@
+// 2018-06-04
+body.page-product-configurable {
+	// 2018-06-04
+	// «How to strike through obliquely with css»
+	// https://stackoverflow.com/a/14593540
+	.swatch-option.color.disabled {
+		position: relative;
+		&:before {
+			-moz-transform:rotate(45deg);
+			-ms-transform:rotate(45deg);
+			-o-transform:rotate(45deg);
+			-webkit-transform:rotate(45deg);
+			background: red;
+			border-top: 1px solid red;
+			content: "";
+			left: -0.5em;
+			position: absolute;
+			right: -0.5em;
+			top: 50%;
+			transform:rotate(45deg);
+		}
+	}
+}

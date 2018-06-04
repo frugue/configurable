@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:framework:ObjectManager/etc/config.xsd'
+>
+<!-- 2018-06-04
+«If one or more sizes of particular color are out of stock,
+those sizes should be marked in grey color some
+that customer could clearly understand that particular size is unavailable.»
+«If all sizes of particular color are out of stock, all sizes should be in grey color.
+Also, a color box should be marked same or similar to Amazon example
+so that customer could clearly understand that a whole color is unavailable.»
+https://www.upwork.com/ab/f/contracts/20124469
+https://magento.stackexchange.com/a/191435 -->
+	<type name='Magento\ConfigurableProduct\Helper\Data'>
+		<plugin
+			name='Frugue\Configurable\Plugin\ConfigurableProduct\Helper\Data'
+			type='Frugue\Configurable\Plugin\ConfigurableProduct\Helper\Data'
+		/>
+	</type>
+	<type name='Magento\Swatches\Block\Product\Renderer\Configurable'>
+		<plugin
+			name='Frugue\Configurable\Plugin\Swatches\Block\Product\Renderer\Configurable'
+			type='Frugue\Configurable\Plugin\Swatches\Block\Product\Renderer\Configurable'
+		/>
+	</type>
+</config>

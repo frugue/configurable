@@ -1,6 +1,6 @@
 {
 	"name": "frugue/configurable"
-	,"version": "0.0.2"
+	,"version": "0.0.3"
 	,"description": "A custom configurable products functionality for frugue.com"
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/frugue/configurable"

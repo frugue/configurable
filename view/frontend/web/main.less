@@ -1,8 +1,6 @@
 // 2018-06-04
 body.page-product-configurable {
-	// 2018-06-04
-	// «How to strike through obliquely with css»
-	// https://stackoverflow.com/a/14593540
+	// 2018-06-04 «How to strike through obliquely with css» https://stackoverflow.com/a/14593540
 	.swatch-option.color.disabled {
 		position: relative;
 		&:before {
@@ -21,5 +19,10 @@ body.page-product-configurable {
 			// https://stackoverflow.com/a/40499367
 			left: -0.5em; right: -0.5em;
 		}
+	}
+	// 2018-06-04 «How to style Disabled Options in a form» https://stackoverflow.com/a/25806984
+	.swatch-select option {
+		color: black;
+		&:disabled, &[value='0'] {color: gray;}
 	}
 }

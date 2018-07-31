@@ -3,7 +3,6 @@ namespace Frugue\Configurable\Plugin\ConfigurableProduct\Helper;
 use Magento\Catalog\Model\Product as P;
 use Magento\Catalog\Model\ResourceModel\Eav\Attribute as A;
 use Magento\CatalogInventory\Api\StockRegistryInterface as IStockRegistry;
-use Magento\CatalogInventory\Model\Stock\Item as StockItem;
 use Magento\CatalogInventory\Model\StockRegistry;
 use Magento\ConfigurableProduct\Helper\Data as Sb;
 use Magento\ConfigurableProduct\Model\Product\Type\Configurable\Attribute as CA;

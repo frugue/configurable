@@ -21,6 +21,7 @@ final class Data {
 	 * https://www.upwork.com/ab/f/contracts/20124469
 	 * https://magento.stackexchange.com/a/191435
 	 * @see \Magento\ConfigurableProduct\Helper\Data::getOptions()
+	 * @see \MagicToolbox\MagicZoomPlus\Helper\ConfigurableData::getOptions()
 	 * @param Sb $sb
 	 * @param \Closure $f
 	 * @param P $current
@@ -28,6 +29,15 @@ final class Data {
 	 * @return array(string => mixed)
 	 */
 	function aroundGetOptions(Sb $sb, \Closure $f, P $current, array $allowed) {
+		/**
+		 * 2018-07-31
+		 * It fixes the issue:
+		 * «если я захожу в какой-то конкретный продукт,
+		 * к примеру: https://frugue.com/uk/sl-553-mix.html
+		 * и пытаюсь поменять цвет нажав на цветной квадратик ничего не происходит.»
+		 * https://www.upwork.com/messages/rooms/room_51783fb0c631d9f71602d574a9205654/story_c85b4eb6899005bec27523aa32ff4089
+		 */
+		$f($current, $allowed);
 		$stockR = df_stock_r(); /** @var IStockRegistry|StockRegistry $stockR */
 		$r = []; /** @var array(string => mixed) $r */
 		foreach ($allowed as $p) {  /** @var P $p */

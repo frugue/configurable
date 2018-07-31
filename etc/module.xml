@@ -6,6 +6,13 @@
 	<module name='Frugue_Configurable' setup_version='0.0.1'>
 		<sequence>
 			<module name='Magento_Configurable'/>
+<!-- 2018-07-31
+It fixes the issue:
+«если я захожу в какой-то конкретный продукт,
+к примеру: https://frugue.com/uk/sl-553-mix.html
+и пытаюсь поменять цвет нажав на цветной квадратик ничего не происходит.»
+https://www.upwork.com/messages/rooms/room_51783fb0c631d9f71602d574a9205654/story_c85b4eb6899005bec27523aa32ff4089 -->
+			<module name='MagicToolbox_MagicZoomPlus'/>
 			<module name='Frugue_Core'/>
 		</sequence>
 	</module>

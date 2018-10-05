@@ -40,6 +40,7 @@ $.extend(sb.prototype, {
 			_super();
 		}
 		else {
+			// 2018-10-06 https://stackoverflow.com/a/29754070
 			var wait = function() {
 				$('.filter-options .swatch-layered.color_lg').length
 					? _super() : setTimeout(function() {wait();}, 100)

@@ -14,10 +14,10 @@ $.extend(sb.prototype, {
 		if (!$('body').hasClass('page-products') && !r[k]) {
 			r[k] = $('.' + k + ' .swatch-option', this.element).first().attr('option-id');
 		}
-		// 2018-08-02
-		// «Preselect the first color swatch for configurable products»:
-		// https://github.com/frugue/configurable/issues/3
-		// https://www.upwork.com/ab/f/contracts/20488254
+		// 2018-10-05
+		// «The frontend product list should show product images according to the chosen color»:
+		// https://github.com/frugue/core/issues/26
+		// https://www.upwork.com/ab/f/contracts/20616130
 		else {
 			ids = ids || $('.filter-options .swatch-layered.color_lg .swatch-option.selected').map(function() {
 				return $(this).attr('option-id');

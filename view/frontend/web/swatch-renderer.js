@@ -4,7 +4,6 @@ define([
 return function(sb) {
 var ids;
 var isProductsList = $('body').hasClass('page-products');
-
 $.extend(sb.prototype, {
 	_getSelectedAttributes: w.wrap(sb.prototype._getSelectedAttributes, function(_super) {
 		var r = _super();

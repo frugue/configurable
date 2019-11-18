@@ -2,8 +2,6 @@
 namespace Frugue\Configurable\Plugin\ConfigurableProduct\Helper;
 use Magento\Catalog\Model\Product as P;
 use Magento\Catalog\Model\ResourceModel\Eav\Attribute as A;
-use Magento\CatalogInventory\Api\StockRegistryInterface as IStockRegistry;
-use Magento\CatalogInventory\Model\StockRegistry;
 use Magento\ConfigurableProduct\Helper\Data as Sb;
 use Magento\ConfigurableProduct\Model\Product\Type\Configurable\Attribute as CA;
 use Magento\Framework\Data\Collection;
@@ -38,11 +36,9 @@ final class Data {
 		 * https://www.upwork.com/messages/rooms/room_51783fb0c631d9f71602d574a9205654/story_c85b4eb6899005bec27523aa32ff4089
 		 */
 		$f($current, $allowed);
-		$stockR = df_stock_r(); /** @var IStockRegistry|StockRegistry $stockR */
 		$r = []; /** @var array(string => mixed) $r */
 		foreach ($allowed as $p) {  /** @var P $p */
-			$p = df_product_load($id = $p->getId()); /** @var int $id */
-			if ($stockR->getStockItem($p->getId(), $p->getStore()->getWebsiteId())->getQty()) {
+			if (df_qty($p = df_product_load($id = $p->getId()))) {/** @var int $id */
 				if ($images = $sb->getGalleryImages($p)) { /** @var Collection $images */
 					foreach ($images as $i) { /** @var _DO $i */
 						$r['images'][$id][] = [

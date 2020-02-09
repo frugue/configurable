@@ -1,7 +1,10 @@
 A custom configurable products module for [frugue.com](https://frugue.com).
 
 ## How to install
-```        
+```            
+sudo service cron stop     
+sudo service nginx stop      
+sudo service php7.2-fpm stop 
 bin/magento maintenance:enable
 rm -rf composer.lock
 composer clear-cache
@@ -20,10 +23,16 @@ bin/magento setup:static-content:deploy \
 	--theme TemplateMonster/theme007 \
 	-f en_US de_DE fr_FR ru_RU
 bin/magento maintenance:disable
+sudo service php7.2-fpm start
+sudo service nginx start
+sudo service cron start
 ```
 
 ## How to upgrade
-```
+```         
+sudo service cron stop     
+sudo service nginx stop      
+sudo service php7.2-fpm stop 
 bin/magento maintenance:enable
 composer remove frugue/configurable
 rm -rf composer.lock
@@ -42,7 +51,10 @@ bin/magento setup:static-content:deploy \
 	--area frontend \
 	--theme TemplateMonster/theme007 \
 	-f en_US de_DE fr_FR ru_RU
-bin/magento maintenance:disable
+bin/magento maintenance:disable 
+sudo service php7.2-fpm start
+sudo service nginx start
+sudo service cron start
 ```
 
 ## Features
